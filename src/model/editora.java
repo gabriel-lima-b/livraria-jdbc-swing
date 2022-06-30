@@ -10,14 +10,14 @@ package model;
      * seu código, endereço, telefone de contato, e o nome de seu gerente. 
  * @author jairb
  */
-public class editora {
+public class Editora {
     private int idEditora;
     private String nmEditora;
     private String endereco;
     private String telefone;
     private String gerente;
 
-    public editora() {
+    public Editora() {
     }
 
     /**
@@ -28,7 +28,7 @@ public class editora {
      * @param telefone
      * @param gerente 
      */
-    public editora(int idEditora, String nmEditora, String endereco, String telefone, String gerente) {
+    public Editora(int idEditora, String nmEditora, String endereco, String telefone, String gerente) {
         this.idEditora = idEditora;
         this.nmEditora = nmEditora;
         this.endereco = endereco;

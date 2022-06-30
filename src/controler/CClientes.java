@@ -6,7 +6,7 @@
 package controler;
 
 import java.util.ArrayList;
-import model.cliente;
+import model.Cliente;
 
 /**
  *
@@ -14,11 +14,11 @@ import model.cliente;
  */
 public class CClientes {
 
-    ArrayList<cliente> clientes = new ArrayList<>();
+    ArrayList<Cliente> clientes = new ArrayList<>();
     int idCliente = 1;
 
     public void mokClientes() {
-        cliente cli = new cliente();
+        Cliente cli = new Cliente();
         cli.setIdCliente(this.addIdCli());
         cli.setNomeCliente("Juventino Florencio");
         cli.setCpf("123");
@@ -26,7 +26,7 @@ public class CClientes {
         cli.setEndereco("Flores da Cunha");
         cli.setTelefone("51 44334433");
         this.addCliente(cli);
-        cliente cli2 = new cliente();
+        Cliente cli2 = new Cliente();
         cli2.setIdCliente(this.addIdCli());
         cli2.setNomeCliente("Josnelson das Candongas");
         cli2.setCpf(null);
@@ -40,17 +40,17 @@ public class CClientes {
             return this.idCliente++;
     }
 
-    public void addCliente(cliente c) {
+    public void addCliente(Cliente c) {
         this.clientes.add(c);
     }
 
-    public ArrayList<cliente> getClientes() {
+    public ArrayList<Cliente> getClientes() {
         return clientes;
     }
 
     public Boolean verificaCliente(int idCliente) {
         boolean verCliente = false;
-        for (cliente cli : clientes) {
+        for (Cliente cli : clientes) {
             if (cli.getIdCliente() == idCliente) {
                 verCliente = true;
                 System.out.println("Cliente: " + cli.getNomeCliente());
@@ -59,11 +59,11 @@ public class CClientes {
         return verCliente;
     }
 
-    public cliente pesqCli(int cpfCNPJ, String pesq) {
-        cliente c = new cliente();
+    public Cliente pesqCli(int cpfCNPJ, String pesq) {
+        Cliente c = new Cliente();
         switch (cpfCNPJ) {
             case 1:
-                for (cliente cli : clientes) {
+                for (Cliente cli : clientes) {
                     if (cli.getCpf() != null && cli.getCpf().equals(pesq)) {
                         c = cli;
                         break;
@@ -71,7 +71,7 @@ public class CClientes {
                 }
                 break;
             case 2:
-                for (cliente cli : clientes) {
+                for (Cliente cli : clientes) {
                     if (cli.getCnpj() != null && cli.getCnpj().equals(pesq)) {
                         c = cli;
                         break;

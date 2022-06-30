@@ -9,7 +9,7 @@ package model;
  *
  * @author jairb
  */
-public class livro {
+public class Livro {
 
     private int idLivro;
     private String titulo;
@@ -20,10 +20,10 @@ public class livro {
     private float preco;
     private int idEditora;
 
-    public livro() {
+    public Livro() {
     }
 
-    public livro(int idLivro, String titulo, String autor, String assunto, String isbn, int estoque, float preco, int idEditora) {
+    public Livro(int idLivro, String titulo, String autor, String assunto, String isbn, int estoque, float preco, int idEditora) {
         this.idLivro = idLivro;
         this.titulo = titulo;
         this.autor = autor;

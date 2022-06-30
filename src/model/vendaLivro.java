@@ -11,7 +11,7 @@ import java.time.LocalDate;
  *
  * @author jairb
  */
-public class vendaLivro {
+public class VendaLivro {
 
     private int idCliente;
     private int idLivro;
@@ -19,10 +19,10 @@ public class vendaLivro {
     private float subTotal;
     private LocalDate dataVenda;
 
-    public vendaLivro() {
+    public VendaLivro() {
     }
 
-    public vendaLivro(int idCliente, int idLivro, int qtd, float subTotal, LocalDate dataVenda) {
+    public VendaLivro(int idCliente, int idLivro, int qtd, float subTotal, LocalDate dataVenda) {
         this.idCliente = idCliente;
         this.idLivro = idLivro;
         this.qtd = qtd;

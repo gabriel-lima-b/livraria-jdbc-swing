@@ -6,7 +6,7 @@
 package controler;
 
 import java.util.ArrayList;
-import model.livro;
+import model.Livro;
 
 /**
  *
@@ -14,11 +14,11 @@ import model.livro;
  */
 public class CLivros {
 
-    ArrayList<livro> livros = new ArrayList<>();
+    ArrayList<Livro> livros = new ArrayList<>();
     int idLiv = 1;
 
     public void mokLivros() {
-        livro liv = new livro();
+        Livro liv = new Livro();
         liv.setIdLivro(this.addIdLiv());
         liv.setTitulo("Pequeno Principe");
         liv.setAssunto("Ludico");
@@ -28,7 +28,7 @@ public class CLivros {
         liv.setEstoque(10);
         liv.setPreco((float) 1.5);
         this.addLivro(liv);
-        livro liv2 = new livro();
+        Livro liv2 = new Livro();
         liv2.setIdLivro(this.addIdLiv());
         liv2.setTitulo("Steve Jobs");
         liv2.setAssunto("Biografia");
@@ -38,7 +38,7 @@ public class CLivros {
         liv2.setEstoque(20);
         liv2.setPreco((float) 35);
         this.addLivro(liv2);
-        livro liv3 = new livro();
+        Livro liv3 = new Livro();
         liv3.setIdLivro(this.addIdLiv());
         liv3.setTitulo("Peixe");
         liv3.setAssunto("Business");
@@ -54,17 +54,17 @@ public class CLivros {
         return this.idLiv++;
     }
 
-    public void addLivro(livro l) {
+    public void addLivro(Livro l) {
         this.livros.add(l);
     }
 
-    public ArrayList<livro> getLivros() {
+    public ArrayList<Livro> getLivros() {
         return livros;
     }
 
     public Boolean verificaLivro(int idLivro) {
         boolean verLivro = false;
-        for (livro livro1 : livros) {
+        for (Livro livro1 : livros) {
             if (livro1.getIdLivro() == idLivro) {
                 verLivro = true;
                 System.out.println("Livro: " + livro1.getTitulo());
@@ -75,7 +75,7 @@ public class CLivros {
 
     public Boolean verEstoqueLivro(int idLivro, int qtd) {
         boolean verEstoqueLivro = false;
-        for (livro Estoqueliv : livros) {
+        for (Livro Estoqueliv : livros) {
             if (Estoqueliv.getIdLivro() == idLivro && Estoqueliv.getEstoque() >= qtd) {
                 verEstoqueLivro = true;
             } else if (Estoqueliv.getIdLivro() == idLivro) {
@@ -86,7 +86,7 @@ public class CLivros {
     }
 
     public void atualizaEstoqueLivro(int idLivro, int qtd) {
-        for (livro upEstoqueLivro : livros) {
+        for (Livro upEstoqueLivro : livros) {
             if (upEstoqueLivro.getIdLivro() == idLivro) {
                 int upEstoque = upEstoqueLivro.getEstoque() - qtd;
                 upEstoqueLivro.setEstoque(upEstoque);
@@ -97,7 +97,7 @@ public class CLivros {
 
     public float verPrecoLivro(int idLivro) {
         float preco = 0;
-        for (livro prLivro : livros) {
+        for (Livro prLivro : livros) {
             if (prLivro.getIdLivro() == idLivro) {
                 preco = prLivro.getPreco();
             }
@@ -107,7 +107,7 @@ public class CLivros {
 
     public int verEstoque(int idLivro) {
         int estoqueAtual = 0;
-        for (livro prLivro : livros) {
+        for (Livro prLivro : livros) {
             if (prLivro.getIdLivro() == idLivro) {
                 estoqueAtual = prLivro.getEstoque();
             }

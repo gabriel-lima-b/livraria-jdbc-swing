@@ -6,7 +6,7 @@
 package view;
 
 import javax.swing.table.DefaultTableModel;
-import model.editora;
+import model.Editora;
 import static tlivrariaoojf.TLivrariaOOJF.cadEditoras;
 
 /**
@@ -28,7 +28,7 @@ public class jfEditora extends javax.swing.JFrame {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         Object rowData[] = new Object[5];//define vetor das colunas
-        for (editora listEdt : cadEditoras.getEditora()) {
+        for (Editora listEdt : cadEditoras.getEditora()) {
             rowData[0] = listEdt.getIdEditora();
             rowData[1] = listEdt.getNmEditora();
             rowData[2] = listEdt.getEndereco();
@@ -192,7 +192,7 @@ public class jfEditora extends javax.swing.JFrame {
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         // TODO add your handling code here:
-        editora edt = new editora();
+        Editora edt = new Editora();
         edt.setNmEditora(jtfNomeEditora.getText());
         edt.setEndereco(jtfEndereco.getText());
         edt.setGerente(jtfGerente.getText());

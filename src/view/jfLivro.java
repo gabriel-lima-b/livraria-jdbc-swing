@@ -7,7 +7,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.livro;
+import model.Livro;
 import static tlivrariaoojf.TLivrariaOOJF.cadEditoras;
 import static tlivrariaoojf.TLivrariaOOJF.cadLivros;
 
@@ -38,7 +38,7 @@ public class jfLivro extends javax.swing.JFrame {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         Object rowData[] = new Object[8];//define vetor das colunas
-        for (livro listLiv : cadLivros.getLivros()) {
+        for (Livro listLiv : cadLivros.getLivros()) {
             rowData[0] = listLiv.getIdLivro();
             rowData[1] = listLiv.getTitulo();
             rowData[2] = listLiv.getAssunto();
@@ -249,7 +249,7 @@ public class jfLivro extends javax.swing.JFrame {
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         // TODO add your handling code here:
-        livro liv = new livro();
+        Livro liv = new Livro();
         if (jtfTitulo.getText().isEmpty() && jtfAutor.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Preencher Titulo e Autor!");
         } else {

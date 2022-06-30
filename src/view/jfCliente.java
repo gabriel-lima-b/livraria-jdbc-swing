@@ -7,7 +7,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.cliente;
+import model.Cliente;
 import static tlivrariaoojf.TLivrariaOOJF.cadClientes;
 
 /**
@@ -219,7 +219,7 @@ public class jfCliente extends javax.swing.JFrame {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         Object rowData[] = new Object[6];//define vetor das colunas
-        for (cliente listCli: cadClientes.getClientes()){
+        for (Cliente listCli: cadClientes.getClientes()){
             rowData[0] = listCli.getIdCliente();
             rowData[1] = listCli.getNomeCliente();
             rowData[2] = listCli.getCpf();
@@ -233,7 +233,7 @@ public class jfCliente extends javax.swing.JFrame {
     
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         // TODO add your handling code here:
-        cliente cli = new cliente();
+        Cliente cli = new Cliente();
         cli.setNomeCliente(jtfNomeCliente.getText());
         cli.setTelefone(jtfTelefone.getText());
         cli.setEndereco(jtfEndereco.getText());
@@ -247,7 +247,7 @@ public class jfCliente extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Selecione tipo de cliente.");
         }
-        cliente cliCpfCnpj;
+        Cliente cliCpfCnpj;
         cliCpfCnpj = cadClientes.pesqCli(tPessoa, jtfCpfCnpj.getText());
         if (jrbCpf.isSelected() && cliCpfCnpj.getCpf() == null) {
             cli.setCpf(jtfCpfCnpj.getText());

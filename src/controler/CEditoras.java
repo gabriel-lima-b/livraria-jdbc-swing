@@ -6,7 +6,7 @@
 package controler;
 
 import java.util.ArrayList;
-import model.editora;
+import model.Editora;
 
 /**
  *
@@ -14,18 +14,18 @@ import model.editora;
  */
 public class CEditoras {
 
-    ArrayList<editora> editora = new ArrayList<>();
+    ArrayList<Editora> editora = new ArrayList<>();
     int idEdt = 1;
 
     public void mokEditoras() {
-        editora edt = new editora();
+        Editora edt = new Editora();
         edt.setIdEditora(this.addIdEdt());
         edt.setNmEditora("Senac");
         edt.setEndereco("Venancio Aires");
         edt.setTelefone("51 44223322");
         edt.setGerente("Visotto");
         this.addEditora(edt);
-        editora edt2 = new editora();
+        Editora edt2 = new Editora();
         edt2.setIdEditora(this.addIdEdt());
         edt2.setNmEditora("Abril");
         edt2.setEndereco("São Paulo");
@@ -38,17 +38,17 @@ public class CEditoras {
         return this.idEdt++;
     }
 
-    public void addEditora(editora e) {
+    public void addEditora(Editora e) {
         this.editora.add(e);
     }
 
-    public ArrayList<editora> getEditora() {
+    public ArrayList<Editora> getEditora() {
         return editora;
     }
 
     public Boolean verficaEditora(int idEditora) {
         Boolean verEditora = false;
-        for (editora edt : editora) {
+        for (Editora edt : editora) {
             if (edt.getIdEditora() == idEditora) {
                 verEditora = true;
                 System.out.println("Editora: " + edt.getNmEditora());
@@ -59,7 +59,7 @@ public class CEditoras {
     
     public String getNomeEdt(int idEditora) {
         String nome = "";
-        for (editora edt : editora) {
+        for (Editora edt : editora) {
             if (edt.getIdEditora() == idEditora) {
                 nome = edt.getNmEditora();
                 System.out.println("Editora: " + edt.getNmEditora());
@@ -70,7 +70,7 @@ public class CEditoras {
 
     public int getIdEditora(String nome) {
         int idEditora = 0;
-        for (editora edt : editora) {
+        for (Editora edt : editora) {
             if (edt.getNmEditora().equals(nome)) {
                 idEditora = edt.getIdEditora();
                 System.out.println("Editora: " + edt.getNmEditora());
