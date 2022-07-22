@@ -5,6 +5,7 @@
  */
 package tlivrariaoojf;
 
+import conexao.Conexao;
 import controler.CClientes;
 import controler.CEditoras;
 import controler.CLivros;
@@ -133,10 +134,10 @@ public class TLivrariaOOJF extends JFrame implements ActionListener{
         cadEditoras.mokEditoras();
         cadLivros.mokLivros();
         
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
+        Conexao.sobeDB();
+        
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            createAndShowGUI();
         });
         
     }

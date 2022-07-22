@@ -5,6 +5,7 @@
  */
 package controler;
 
+import dao.ClienteDAO;
 import java.util.ArrayList;
 import model.Cliente;
 
@@ -16,6 +17,7 @@ public class CClientes {
 
     ArrayList<Cliente> clientes = new ArrayList<>();
     int idCliente = 1;
+    ClienteDAO cliDAO = new ClienteDAO();
 
     public void mokClientes() {
         Cliente cli = new Cliente();
@@ -45,7 +47,7 @@ public class CClientes {
     }
 
     public ArrayList<Cliente> getClientes() {
-        return clientes;
+        return cliDAO.listarClientes();
     }
 
     public Boolean verificaCliente(int idCliente) {
